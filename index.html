@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie de imagini</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+#formular {
+    margin-bottom: 20px;
+}
+
+#formular input[type="text"], #formular button {
+    margin-bottom: 10px;
+}
+
+#galerie {
+    margin-top: 20px;
+}
+
+#imagini {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagine {
+    margin: 5px;
+}
+</style>
+</head>
+<body>
+<h1>Galerie de imagini</h1>
+<div id="formular">
+    <h2>Adaugă o imagine nouă:</h2>
+    <input type="text" id="nume" placeholder="Nume"><br>
+    <input type="text" id="pret" placeholder="Preț"><br>
+    <input type="text" id="linkImagine" placeholder="Link Imagine (de pe Imgur)"><br>
+    <button onclick="adaugaImagine()">Adaugă imagine</button>
+</div>
+<div id="galerie">
+    <h2>Imagini existente:</h2>
+    <div id="imagini"></div>
+</div>
+<script>
+function adaugaImagine() {
+    var nume = document.getElementById('nume').value;
+    var pret = document.getElementById('pret').value;
+    var linkImagine = document.getElementById('linkImagine').value;
+    
+    var imaginiContainer = document.getElementById('imagini');
+    var img = document.createElement('img');
+    img.src = linkImagine;
+    img.className = 'imagine';
+    imaginiContainer.appendChild(img);
+    
+    var descriere = document.createElement('div');
+    descriere.textContent = 'Nume: ' + nume + ', Preț: ' + pret;
+    imaginiContainer.appendChild(descriere);
+}
+</script>
+</body>
+</html>
