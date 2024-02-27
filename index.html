@@ -6,53 +6,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Galerie cu casete</title>
 <style>
-    /* Stilizare pentru casete */
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .box {
-        width: calc(14.28% - 20px);
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+/* Stiluri pentru casete */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.box {
+    width: calc(14.28% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.grid-item {
+    text-align: center;
+    width: 100px;
+    height: 120px;
+    background-color: #C0E7F9;
+    border: 3px solid rgb(255, 255, 255);
+    font-size: 1rem;
+}
+.grid-item img {
+    display: none; /* Ascunde imaginea pentru că am folosit background-image */
+}
+.item-price {
+    position: relative;
+    top: -20px;
+}
 </style>
 </head>
 <body>
-<div class="container">
-    <!-- Caseta 1 -->
-    <div class="box">
-        <h3>Titlu 1</h3>
-        <img src="link_imgur.gif" alt="Imagine">
-        <p>Pret: $10</p>
-    </div>
-    <!-- Caseta 2 -->
-    <div class="box">
-        <h3>Titlu 2</h3>
-        <img src="link_imgur.gif" alt="Imagine">
-        <p>Pret: $15</p>
-    </div>
-    <!-- Caseta 3 -->
-    <div class="box">
-        <h3>Titlu 3</h3>
-        <img src="link_imgur.gif" alt="Imagine">
-        <p>Pret: $20</p>
-    </div>
-    <!-- Continuă pentru celelalte casete -->
-    <!-- Caseta 4 -->
-    <!-- Caseta 5 -->
-    <!-- Caseta 6 -->
-    <!-- Caseta 7 -->
-    <!-- Și așa mai departe... -->
-</div>
+<table cellpadding="0" cellspacing="0" width="100%" >
+   <tr>
+       <td><div class='grid'><div class='grid-item' data-itemId='1' style="background-image: url('https://i.postimg.cc/WzQHbDfK/anigif.gif')"><div class='item-price'>300 xats</div></div></td>
+       <!-- Mai multe celule TD aici -->
+   </tr>
+   <!-- Alte rânduri de celule TR aici -->
+</table>
 </body>
 </html>
